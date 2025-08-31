@@ -42,8 +42,8 @@ class ValidateRegisterInputUseCaseImpl : ValidateRegisterInputUseCase {
         if(phone.count() < 11) {
             return RegisterInputValidationType.PhoneNumberInvalid
         }
-
         if(!password.containsNumber()) {
+
             return RegisterInputValidationType.PasswordNumberMissing
         }
 

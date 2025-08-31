@@ -11,13 +11,15 @@ import com.example.receitafacil.presentation.features.register.domain.source.Reg
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
-import jakarta.inject.Inject
+import javax.inject.Inject
 
 class RegisterUserRemoreDataSourceImpl @Inject constructor(
     private val recipesServiceApi: RecipesServiceApi
 ): RegisterUserRemoreDataSource {
 
-    override suspend fun registerUser(addUserRequestModel: AddUserRequestModel): ServiceResult<SimpleResponseModel> {
+    override suspend fun registerUser(
+        addUserRequestModel: AddUserRequestModel
+    ): ServiceResult<SimpleResponseModel> {
         return try {
             val addUserRequest = addUserRequestModel.toAddUserRequest()
             val response = recipesServiceApi.register(addUserRequest)
@@ -51,10 +53,9 @@ class RegisterUserRemoreDataSourceImpl @Inject constructor(
                 message = e.error.message
             )
         } catch (e: Exception) {
-                ServiceResult.Error(
-                    message = e.message.toString()
-                )
-            }
-
+            ServiceResult.Error(
+                message = e.message.toString()
+            )
         }
+    }
 }
