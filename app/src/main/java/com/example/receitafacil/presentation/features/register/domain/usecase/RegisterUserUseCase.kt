@@ -9,13 +9,14 @@ import com.example.receitafacil.presentation.features.register.domain.model.AddU
 import com.example.receitafacil.presentation.features.register.domain.repository.RegisterUserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 interface RegisterUserUseCase {
     operator fun invoke(parameters: Parameters): Flow<ResponseData<SimpleResponseModel>>
     data class Parameters(val addUserRequestModel: AddUserRequestModel)
 }
 
-class RegisterUserUseCaseImpl(
+class RegisterUserUseCaseImpl @Inject constructor(
     private val registerUserRepository: RegisterUserRepository,
     private val dispatcherProvider: DispatcherProvider
 ): RegisterUserUseCase, Task<RegisterUserUseCase.Parameters, SimpleResponseModel>() {

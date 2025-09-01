@@ -7,15 +7,15 @@ import com.example.receitafacil.core.util.ServiceResult
 import com.example.receitafacil.presentation.features.register.data.mapper.toAddUserRequest
 import com.example.receitafacil.presentation.features.register.data.mapper.toSimpleResponseModel
 import com.example.receitafacil.presentation.features.register.domain.model.AddUserRequestModel
-import com.example.receitafacil.presentation.features.register.domain.source.RegisterUserRemoreDataSource
+import com.example.receitafacil.presentation.features.register.domain.source.RegisterUserRemoteDataSource
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
 import javax.inject.Inject
 
-class RegisterUserRemoreDataSourceImpl @Inject constructor(
+class RegisterUserRemoteDataSourceImpl @Inject constructor(
     private val recipesServiceApi: RecipesServiceApi
-): RegisterUserRemoreDataSource {
+): RegisterUserRemoteDataSource {
 
     override suspend fun registerUser(
         addUserRequestModel: AddUserRequestModel
