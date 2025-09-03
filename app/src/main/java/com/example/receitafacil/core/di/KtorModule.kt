@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.receitafacil.core.di
 
 import com.example.receitafacil.BuildConfig

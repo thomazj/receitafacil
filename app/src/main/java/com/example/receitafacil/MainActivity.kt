@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import br.com.myrecipesapp.presentation.ui.theme.ReceitaFacilAppTheme
-import com.example.receitafacil.presentation.navigation.RootHost
-import com.example.receitafacil.presentation.navigation.screens.Graphs
+import com.example.receitafacil.ui.presentation.navigation.RootHost
+import com.example.receitafacil.ui.presentation.navigation.screens.Graphs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
